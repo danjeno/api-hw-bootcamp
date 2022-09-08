@@ -1,1 +1,1 @@
-# simple student management api for an imaginary course
+simple student management api for an imaginary course
