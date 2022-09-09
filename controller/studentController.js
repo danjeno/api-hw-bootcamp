@@ -56,3 +56,16 @@ export const updateStudent = async (req, res) => {
     console.error(error);
   }
 };
+
+export const deleteByFinalMark = async (req, res) => {
+  //delete all students with final mark from request
+  try {
+    await studentModel.deleteMany({ finalMark: req.params.finalMark });
+    console.log(`final mark ${req.params.finalMark} deleted`); //debugging
+    res
+      .status(200)
+      .send(`students with final mark ${req.params.finalMark} deleted`);
+  } catch (error) {
+    console.error(error);
+  }
+};
